@@ -1,0 +1,44 @@
+﻿State                                              TotalAffected
+-------------------------------------------------- -------------
+California                                         191
+Florida                                            170
+Illinois                                           168
+Pennsylvania                                       93
+Texas                                              91
+Tennessee                                          85
+Missouri                                           64
+Louisiana                                          63
+Ohio                                               59
+New Jersey                                         58
+Alabama                                            55
+North Carolina                                     51
+New York                                           49
+Maryland                                           42
+Michigan                                           42
+Indiana                                            37
+Kentucky                                           34
+Georgia                                            32
+Colorado                                           30
+South Carolina                                     24
+Oklahoma                                           21
+District of Columbia                               21
+Arkansas                                           20
+Virginia                                           20
+Mississippi                                        18
+Nebraska                                           18
+Nevada                                             18
+Arizona                                            17
+Wisconsin                                          16
+Washington                                         13
+Kansas                                             12
+Minnesota                                          11
+New Mexico                                         9
+Connecticut                                        8
+Delaware                                           5
+Massachusetts                                      4
+Utah                                               4
+
+(37 rows affected)
+
+
+Completion time: 2023-11-01T15:12:30.3461350+00:00
