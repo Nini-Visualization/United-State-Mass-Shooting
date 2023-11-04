@@ -1,5 +1,6 @@
 # United-State-Mass-Shooting
 Queries on US mass shooting from 2018 - 2022
+<<<<<<< HEAD
 
 s1. Mass Shooting Count per State-2018
 SELECT State, COUNT(*) AS TotalShootings2018
@@ -122,3 +123,5 @@ FROM CombinedMassShootings
 
 
 
+=======
+>>>>>>> 89753cf86fe5e5fb699026b718a3358dae0f9bb9
