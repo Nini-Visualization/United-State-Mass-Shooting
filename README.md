@@ -2,13 +2,13 @@
 Queries on US mass shooting from 2018 - 2022
 <<<<<<< HEAD
 
-s1. Mass Shooting Count per State-2018
+s01. Mass Shooting Count per State-2018
 SELECT State, COUNT(*) AS TotalShootings2018
 FROM shootings_2018
 GROUP BY State
 ORDER BY TotalShootings2018 DESC
 
-s2. Average Dead/Injured per month, 2018.
+s02. Average Dead/Injured per month, 2018.
 SELECT 
     YEAR(Date) AS Year, 
     MONTH(Date) AS Month, 
@@ -18,28 +18,28 @@ FROM shootings_2018
 GROUP BY YEAR(Date), MONTH(Date)
 ORDER BY Year, Month
 
-s3. Total Number of people affected by Mass shooting in 2018
+s03. Total Number of people affected by Mass shooting in 2018
 
 SELECT State, SUM(Total) AS TotalAffected
 FROM shootings_2018
 GROUP BY State
 ORDER BY TotalAffected DESC
 
-s4. Top Description of Mass shooting, 2018.
+s04. Top Description of Mass shooting, 2018.
 
 SELECT Description, COUNT(*) AS Occurrences
 FROM shootings_2018
 GROUP BY Description
 ORDER BY Occurrences DESC
 
-s5. Number of incident with child or teen 
+s05. Number of incident with child or teen 
 SELECT COUNT(*) AS No_Child_Teen_Affected
 FROM shootings_2018
 WHERE Description LIKE '%child%' OR Description LIKE '%teen%';
 
 the data created had no normalization. so tyhe best way to create a relationship between them was to use the union command.
 
-s6. Unionized Tables 
+s06. Unionized Tables 
 CREATE TABLE CombinedMassShootings (
     Date DATE,
     State NVARCHAR(255),
@@ -63,20 +63,20 @@ SELECT Date, State, Dead, Injured, Total, Description FROM Shootings_2022;
 
 -- Query the combined data
 
-s7. Total Number of massshooting in eaxh state from 2018-2022.
+s07. Total Number of massshooting in eaxh state from 2018-2022.
 
 select State, COUNT(*) AS TotalShootings
 from CombinedMassShootings
 GROUP BY State
 ORDER BY TotalShootings DESC
 
-s8. Total Number of Mass shooting per year
+s08. Total Number of Mass shooting per year
 select YEAR(Date) AS Year, COUNT(*) AS TotalShootings
 from CombinedMassShootings
 GROUP BY YEAR(Date)
 ORDER BY Year
 
-s9. Total Number of people killed and injured from 2018 to 2022
+s09. Total Number of people killed and injured from 2018 to 2022
 select SUM(Dead) AS TotalDead, SUM(Injured) AS TotalInjured
 from CombinedMassShootings;
 
@@ -115,7 +115,7 @@ FROM CombinedMassShootings
 GROUP BY YEAR(Date), MONTH(Date)
 ORDER BY TotalShootings DESC
 
-s16. % of mass shootings with no injuries
+s16. Percentage mass shootings with no injuries
 SELECT
     (COUNT(*) - COUNT(CASE WHEN Injured > 0 THEN 1 ELSE NULL END)) * 100.0 / COUNT(*) AS PercentageWithNoInjuries
 FROM CombinedMassShootings
